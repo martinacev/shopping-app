@@ -29,6 +29,10 @@ function App() {
 		setCartEmpty(false);
 	};
 
+	const handleDeleteAll = () => {
+		handleAddToCart("");
+	};
+
 	return (
 		<div className="App">
 			<Nav logo={logo} Avatar={Avatar} onBasketClick={handleBasketClick} cartCount={cartCount} />
@@ -39,7 +43,14 @@ function App() {
 				ProductFourth={ProductFourth}
 				onAddToCart={handleAddToCart}
 			/>
-			{!isCartEmpty && <EmptyCart cartCount={cartCount} cartTotal={cartTotal} Product={Product} />}
+			{!isCartEmpty && (
+				<EmptyCart
+					cartCount={cartCount}
+					cartTotal={cartTotal}
+					Product={Product}
+					handleDeleteAll={handleDeleteAll}
+				/>
+			)}
 		</div>
 	);
 }

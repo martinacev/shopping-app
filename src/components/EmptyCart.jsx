@@ -1,6 +1,6 @@
 import classes from "./Reusable.module.css";
 
-const EmptyCart = ({ cartCount, cartTotal, Product }) => {
+const EmptyCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
 	return (
 		<div className={classes.container}>
 			<div className={classes.cart}>
@@ -24,7 +24,9 @@ const EmptyCart = ({ cartCount, cartTotal, Product }) => {
 									</p>
 								</div>
 								<div>
-									<button className={classes.delete}>X</button>
+									<button onClick={handleDeleteAll} className={classes.delete}>
+										X
+									</button>
 								</div>
 							</div>
 						)
