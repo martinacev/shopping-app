@@ -16,6 +16,7 @@ const Information = ({ onAddToCart, cartTotal }) => {
 
 	const handleAddToCartClick = () => {
 		onAddToCart({ count, price: 125 });
+		setCount(0);
 	};
 
 	return (

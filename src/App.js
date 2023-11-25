@@ -20,7 +20,7 @@ function App() {
 		handleDeleteAll();
 	};
 
-	const handleAddToCart = ({ count, price }) => {
+	const handleAddToCart = ({ count = 0, price = 0 }) => {
 		const totalCount = cartCount + count;
 		const totalPrice = cartTotal + count * price;
 
@@ -31,7 +31,7 @@ function App() {
 	};
 
 	const handleDeleteAll = () => {
-		handleAddToCart("");
+		handleAddToCart({});
 	};
 
 	return (
