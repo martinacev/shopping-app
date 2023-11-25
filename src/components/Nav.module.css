@@ -1,0 +1,101 @@
+.nav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px;
+
+	border-bottom: 2px solid rgb(202, 201, 201);
+	position: relative;
+}
+
+.wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.nav ul {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	color: grey;
+	padding-left: 20px;
+}
+
+.container {
+	display: flex;
+	gap: 30px;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.avatar {
+	display: flex;
+	width: 40px;
+}
+
+.category {
+	position: relative;
+	cursor: pointer;
+	transition: border-bottom 0.3 ease;
+}
+
+.category::after {
+	content: "";
+	display: block;
+	width: 100%;
+	transition: border-bottom 0.3 ease;
+}
+
+.category:hover::after {
+	border-bottom: 4px solid orange;
+	transform: translateY(38px);
+}
+
+.circle {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+}
+
+.circle::before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 2px solid transparent;
+	border-radius: 50%;
+	transition: border-color 0.3s ease;
+	box-sizing: border-box;
+}
+
+.circle:hover::before {
+	border-color: orange;
+}
+
+.basket {
+	display: flex;
+	border: none;
+	background-color: white;
+
+	cursor: pointer;
+}
+
+.cartCountText {
+	position: absolute;
+	color: white;
+	background-color: orange;
+	top: 25px;
+	right: 90px;
+	border: 1px solid orange;
+	border-radius: 20px;
+	font-size: 10px;
+	width: 20px;
+	display: flex;
+	justify-content: center;
+}
