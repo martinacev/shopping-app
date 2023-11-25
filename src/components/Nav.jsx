@@ -1,6 +1,8 @@
 import classes from "./Nav.module.css";
 
 const Nav = ({ logo, Avatar, onBasketClick, cartCount }) => {
+	const validCartCount = Number.isNaN(Number(cartCount)) ? 0 : cartCount;
+
 	return (
 		<nav className={classes.nav}>
 			<div className={classes.wrapper}>
@@ -26,10 +28,10 @@ const Nav = ({ logo, Avatar, onBasketClick, cartCount }) => {
 						/>
 					</svg>
 				</button>
-				<div className={`${classes.circle} ${cartCount > 0 ? classes.cartCount : ""}`}>
+				<div className={`${classes.circle} ${validCartCount > 0 ? classes.cartCount : ""}`}>
 					<img className={classes.avatar} src={Avatar} alt="avatar" />
 				</div>
-				<span className={classes.cartCountText}>{cartCount}</span>
+				<span className={classes.cartCountText}>{validCartCount}</span>
 			</div>
 		</nav>
 	);

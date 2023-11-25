@@ -1,13 +1,20 @@
+import React, { useState } from "react";
 import classes from "./Reusable.module.css";
 
 const EmptyCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
+	const [isEmpty, setEmpty] = useState(cartTotal === 0);
+
+	const handleDeleteAllAndEmptyCart = () => {
+		handleDeleteAll();
+		setEmpty(true);
+	};
+
 	return (
 		<div className={classes.container}>
 			<div className={classes.cart}>
 				<header className={classes.title}>Cart</header>
-
 				<div className={classes.wrapper}>
-					{cartTotal === 0 ? (
+					{isEmpty ? (
 						<div className={classes.price}>
 							<p>Your Cart is Empty</p>
 						</div>
@@ -24,7 +31,7 @@ const EmptyCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
 									</p>
 								</div>
 								<div>
-									<button onClick={handleDeleteAll} className={classes.delete}>
+									<button onClick={handleDeleteAllAndEmptyCart} className={classes.delete}>
 										X
 									</button>
 								</div>

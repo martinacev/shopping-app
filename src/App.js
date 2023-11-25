@@ -17,6 +17,7 @@ function App() {
 
 	const handleBasketClick = () => {
 		setCartEmpty(!isCartEmpty);
+		handleDeleteAll();
 	};
 
 	const handleAddToCart = ({ count, price }) => {
