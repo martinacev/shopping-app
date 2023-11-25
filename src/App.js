@@ -39,7 +39,7 @@ function App() {
 				ProductFourth={ProductFourth}
 				onAddToCart={handleAddToCart}
 			/>
-			{!isCartEmpty && <EmptyCart cartCount={cartCount} cartTotal={cartTotal} />}
+			{!isCartEmpty && <EmptyCart cartCount={cartCount} cartTotal={cartTotal} Product={Product} />}
 		</div>
 	);
 }

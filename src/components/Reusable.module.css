@@ -33,6 +33,7 @@
 
 .wrapper {
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
 	padding: 25px 0px;
@@ -44,18 +45,19 @@
 }
 
 .shoes {
-	width: 50px;
+	width: 55px;
 	border-radius: 5px;
 	display: flex;
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 .price {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 	color: rgb(224, 221, 221);
-	width: 250px;
+	width: 300px;
 }
 
 .btn {
@@ -74,4 +76,19 @@
 	border-radius: 10px;
 
 	cursor: pointer;
+}
+
+.delete {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	background-color: white;
+	color: orange;
+	border: none;
+	cursor: pointer;
+}
+
+.amount {
+	color: black;
 }
