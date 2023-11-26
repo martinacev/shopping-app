@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import classes from "./ModalCart.module.css";
 
-const ModalCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
+import product from "../../images/image-product-1.jpg";
+
+const ModalCart = ({ cartCount, cartTotal, handleDeleteAll }) => {
 	const [isEmpty, setEmpty] = useState(cartTotal === 0);
 
 	const handleDeleteAllAndEmptyCart = () => {
@@ -22,7 +24,7 @@ const ModalCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
 						cartCount > 0 && (
 							<div className={classes.price}>
 								<div className={classes.shoes}>
-									<img className={classes.shoes} src={Product} alt="" />
+									<img className={classes.shoes} src={product} alt="" />
 								</div>
 								<div>
 									<p>Fall Limited Edition Sneakers</p>

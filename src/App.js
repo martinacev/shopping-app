@@ -1,10 +1,5 @@
 import "./App.css";
 import Nav from "./components/Nav/Nav";
-import Avatar from "./images/image-avatar.png";
-import Product from "./images/image-product-1.jpg";
-import ProductSecond from "./images/image-product-2.jpg";
-import ProductThird from "./images/image-product-3.jpg";
-import ProductFourth from "./images/image-product-4.jpg";
 import Content from "./components/Content/Content";
 import { useState } from "react";
 
@@ -27,20 +22,8 @@ function App() {
 
 	return (
 		<div className="App">
-			<Nav
-				Avatar={Avatar}
-				cartCount={cartCount}
-				cartTotal={cartTotal}
-				Product={Product}
-				handleDeleteAll={handleDeleteAll}
-			/>
-			<Content
-				Product={Product}
-				ProductSecond={ProductSecond}
-				ProductThird={ProductThird}
-				ProductFourth={ProductFourth}
-				onAddToCart={handleAddToCart}
-			/>
+			<Nav cartCount={cartCount} cartTotal={cartTotal} handleDeleteAll={handleDeleteAll} />
+			<Content onAddToCart={handleAddToCart} />
 		</div>
 	);
 }

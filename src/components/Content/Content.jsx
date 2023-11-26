@@ -1,6 +1,11 @@
 import classes from "./Content.module.css";
 import Information from "../Information/Information";
 
+import product from "../../images/image-product-1.jpg";
+import productSecond from "../../images/image-product-2.jpg";
+import productThird from "../../images/image-product-3.jpg";
+import productFourth from "../../images/image-product-4.jpg";
+
 const Content = ({ Product, ProductSecond, ProductThird, ProductFourth, onAddToCart }) => {
 	const gallery = [Product, ProductSecond, ProductThird, ProductFourth];
 
@@ -13,20 +18,20 @@ const Content = ({ Product, ProductSecond, ProductThird, ProductFourth, onAddToC
 		<div className={classes.container}>
 			<div className={classes["col-1-4"]}>
 				<div>
-					<img className={classes.shoes} src={Product} alt="Product" />
+					<img className={classes.shoes} src={product} alt="Product" />
 
 					<div className={classes.wrapper}>
 						<div>
-							<img className={classes.products} src={Product} alt="Product" />
+							<img className={classes.products} src={product} alt="Product" />
 						</div>
 						<div>
-							<img className={classes.products} src={ProductSecond} alt="Product" />
+							<img className={classes.products} src={productSecond} alt="Product" />
 						</div>
 						<div>
-							<img className={classes.products} src={ProductThird} alt="Product" />
+							<img className={classes.products} src={productThird} alt="Product" />
 						</div>
 						<div>
-							<img className={classes.products} src={ProductFourth} alt="Product" />
+							<img className={classes.products} src={productFourth} alt="Product" />
 						</div>
 					</div>
 				</div>

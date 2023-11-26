@@ -1,5 +1,6 @@
 import { useState } from "react";
 import classes from "./Information.module.css";
+import PRODUCT_DATA from "../data/productData";
 
 const Information = ({ onAddToCart }) => {
 	const [count, setCount] = useState(0);
@@ -21,19 +22,16 @@ const Information = ({ onAddToCart }) => {
 
 	return (
 		<div className={classes.wrapper}>
-			<h4>SNEAKER COMPANY</h4>
-			<h1>Fall Limited Edition Sneakers</h1>
-			<p className={classes.text}>
-				These low-profile sneakers are perfect casual wear companion.Featuring a durable rubber outer sole,
-				they'll withstand everything the weather can offer.
-			</p>
+			<h4>{PRODUCT_DATA.name}</h4>
+			<h1>{PRODUCT_DATA.title}</h1>
+			<p className={classes.text}>{PRODUCT_DATA.text}</p>
 
 			<div className={classes.price}>
 				<div className={classes.dollars}>
-					<h4>$125.00</h4>
-					<div className={classes.procent}>50%</div>
+					<h4>{PRODUCT_DATA.value}</h4>
+					<div className={classes.procent}>{PRODUCT_DATA.discount}</div>
 				</div>
-				<p className={classes.discount}>250.00$</p>
+				<p className={classes.discount}>{PRODUCT_DATA.price}</p>
 
 				<div className={classes.payment}>
 					<button onClick={handleDecrement} className={classes.btn}>

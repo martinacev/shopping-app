@@ -3,7 +3,9 @@ import classes from "./Nav.module.css";
 import ModalCart from "../ModalCart/ModalCart";
 import logo from "../../images/logo.svg";
 
-const Nav = ({ Avatar, cartCount, cartTotal, Product, handleDeleteAll }) => {
+import avatar from "../../images/image-avatar.png";
+
+const Nav = ({ cartCount, cartTotal, handleDeleteAll }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleToggleModal = () => {
@@ -38,17 +40,12 @@ const Nav = ({ Avatar, cartCount, cartTotal, Product, handleDeleteAll }) => {
 							</svg>
 						</button>
 						{isOpen && (
-							<ModalCart
-								cartCount={cartCount}
-								cartTotal={cartTotal}
-								Product={Product}
-								handleDeleteAll={handleDeleteAll}
-							/>
+							<ModalCart cartCount={cartCount} cartTotal={cartTotal} handleDeleteAll={handleDeleteAll} />
 						)}
 						<span className={classes.cartCountText}>{cartCount}</span>
 					</div>
 					<div className={`${classes.circle} ${cartCount > 0 ? classes.cartCount : ""}`}>
-						<img className={classes.avatar} src={Avatar} alt="avatar" />
+						<img className={classes.avatar} src={avatar} alt="avatar" />
 					</div>
 				</div>
 			</nav>
