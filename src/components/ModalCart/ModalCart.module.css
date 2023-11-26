@@ -9,8 +9,8 @@
 	border-radius: 10px;
 
 	position: absolute;
-	top: 80px;
-	right: 130px;
+	top: 100%;
+	right: -50%;
 	border: 1px solid rgb(228, 223, 223);
 }
 .cart {

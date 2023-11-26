@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classes from "./Information.module.css";
 
-const Information = ({ onAddToCart, cartTotal }) => {
+const Information = ({ onAddToCart }) => {
 	const [count, setCount] = useState(0);
 
 	const handleIncremet = () => {

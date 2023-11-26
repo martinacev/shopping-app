@@ -1,7 +1,14 @@
 import classes from "./Content.module.css";
-import Information from "./Information";
+import Information from "../Information/Information";
 
 const Content = ({ Product, ProductSecond, ProductThird, ProductFourth, onAddToCart }) => {
+	const gallery = [Product, ProductSecond, ProductThird, ProductFourth];
+
+	// create state with name ActiveImage
+	//set default value of the state to be gallery[0]
+
+	// add onClick on the images, onClick should change ste activeImage state with theri src value
+
 	return (
 		<div className={classes.container}>
 			<div className={classes["col-1-4"]}>

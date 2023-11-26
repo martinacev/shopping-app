@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import classes from "./Reusable.module.css";
+import classes from "./ModalCart.module.css";
 
-const EmptyCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
+const ModalCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
 	const [isEmpty, setEmpty] = useState(cartTotal === 0);
 
 	const handleDeleteAllAndEmptyCart = () => {
@@ -46,4 +46,4 @@ const EmptyCart = ({ cartCount, cartTotal, Product, handleDeleteAll }) => {
 	);
 };
 
-export default EmptyCart;
+export default ModalCart;
