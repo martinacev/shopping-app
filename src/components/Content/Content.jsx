@@ -5,34 +5,29 @@ import product from "../../images/image-product-1.jpg";
 import productSecond from "../../images/image-product-2.jpg";
 import productThird from "../../images/image-product-3.jpg";
 import productFourth from "../../images/image-product-4.jpg";
+import { useState } from "react";
 
-const Content = ({ Product, ProductSecond, ProductThird, ProductFourth, onAddToCart }) => {
-	const gallery = [Product, ProductSecond, ProductThird, ProductFourth];
+const Content = ({ onAddToCart }) => {
+	const gallery = [product, productSecond, productThird, productFourth];
 
-	// create state with name ActiveImage
-	//set default value of the state to be gallery[0]
+	const [activeImage, setActiveImage] = useState(gallery[0]);
 
-	// add onClick on the images, onClick should change ste activeImage state with theri src value
+	const handleImageClick = (src) => {
+		setActiveImage(src);
+	};
 
 	return (
 		<div className={classes.container}>
 			<div className={classes["col-1-4"]}>
 				<div>
-					<img className={classes.shoes} src={product} alt="Product" />
+					<img className={classes.shoes} src={activeImage} alt="Product" />
 
 					<div className={classes.wrapper}>
-						<div>
-							<img className={classes.products} src={product} alt="Product" />
-						</div>
-						<div>
-							<img className={classes.products} src={productSecond} alt="Product" />
-						</div>
-						<div>
-							<img className={classes.products} src={productThird} alt="Product" />
-						</div>
-						<div>
-							<img className={classes.products} src={productFourth} alt="Product" />
-						</div>
+						{gallery.map((image, index) => (
+							<div key={index} onClick={() => handleImageClick(image)}>
+								<img className={classes.products} src={image} alt={`Product ${index + 1}`} />
+							</div>
+						))}
 					</div>
 				</div>
 			</div>
